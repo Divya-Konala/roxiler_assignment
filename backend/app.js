@@ -6,7 +6,7 @@ const cors = require("cors");
 const ProductSchema = require("./Models/ProductSchema");
 const moment = require("moment");
 const MONGO_URI = process.env.MONGO_URI;
-const shouldInitialize = process.argv.includes("--initialize-db");
+// const shouldInitialize = process.argv.includes("--initialize-db");
 
 //db connection
 const connectDB = () => {
@@ -291,9 +291,9 @@ app.listen(8001, async () => {
   try {
     console.log("server is running on port 8001");
     await connectDB();
-    if (shouldInitialize) {
+    // if (shouldInitialize) {
       FetchDataAndInsert();
-    }
+    // }
   } catch (err) {
     console.log(err);
   }
